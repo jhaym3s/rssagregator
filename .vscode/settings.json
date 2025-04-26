@@ -1,0 +1,8 @@
+{
+"go.useLanguageServer": true,
+"go.languageServerFlags": ["-rpc.trace"],
+"go.lintOnSave": "package",     
+"go.lintTool": "golangci-lint",
+"go.lintOnType": true,
+
+}
