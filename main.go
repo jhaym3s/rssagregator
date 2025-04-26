@@ -1,6 +1,8 @@
 package main 
 
-import "fmt"
+import (
+    "fmt"
+)
 
 type Person struct {
 	Name string
@@ -58,9 +60,9 @@ func addMultipleTime() func(int) int {
 }
 
 func withPointers(message *string) {
+	defer fmt.Println("it has finished")
 	*message = fmt.Sprintf("Hello %s", *message)
 	fmt.Println("Inside withPointers:", *message)
-	
 }
 
 
@@ -70,7 +72,7 @@ func main()  {
 	z := *y
 	fmt.Println("print %v and %v",y,z)
 	name := "John"	
- withPointers(&name)
+ go withPointers(&name)
 
 	
 }
