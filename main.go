@@ -57,12 +57,20 @@ func addMultipleTime() func(int) int {
 	
 }
 
+func withPointers(message *string) {
+	*message = fmt.Sprintf("Hello %s", *message)
+	fmt.Println("Inside withPointers:", *message)
+	
+}
+
 
 func main()  {
 	x := 10
 	y := &x
 	z := *y
 	fmt.Println("print %v and %v",y,z)
+	name := "John"	
+ withPointers(&name)
 
 	
 }
