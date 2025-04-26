@@ -59,36 +59,10 @@ func addMultipleTime() func(int) int {
 
 
 func main()  {
-	car := struct {
-		Make  string
-		Model string
-		Year  int
-	}{
-		Make:  "Toyota",
-		Model: "Corolla",
-		Year:  2020,
-	}
-	blueShape := rectangle{
-		length: 5,
-		width:  10,
-	}
+	x := 10
+	y := &x
+	z := *y
+	fmt.Println("print %v and %v",y,z)
 
-	mapSample := map[string]map[string]int{
-		"John": {
-			"age":  30,
-			"height": 180,
-		},		}
-	fmt.Println("Area of rectangle:", blueShape.area())
-	const name= "John Doe"
-	//const person int  = name
-	 someone := Person{Name: name, Age: 30}
-	 mother := woman{
-		Person:  someone,
-		hipSize: 36,
-	}
-	printShapeInfo(blueShape)
-	myCar := car
-	fmt.Println("person  details:", mother)
-	fmt.Println("Car details:", myCar)
 	
 }
