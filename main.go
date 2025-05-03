@@ -4,6 +4,8 @@ import (
     "fmt"
 )
 
+
+
 type Person struct {
 	Name string
 	Age  int
@@ -65,11 +67,17 @@ func withPointers(message *string) {
 	fmt.Println("Inside withPointers:", *message)
 }
 
-
 func main()  {
+	ch := make(chan int)
+	
+	go func() {
+		ch <- 1  // send 1 to the channel
+	}()
+	get := <-ch // receive from the channel
 	x := 10
 	y := &x
 	z := *y
+	fmt.Println("x: %v", get)
 	fmt.Println("print %v and %v",y,z)
 	name := "John"	
  go withPointers(&name)
